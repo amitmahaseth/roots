@@ -3,7 +3,6 @@ package com.rootsrecipes.di.module
 import android.content.Context
 import android.util.Log
 import com.rootsrecipes.BuildConfig
-import com.rootsrecipes.database.entity.viewmodel.UserViewmodel
 import com.rootsrecipes.di.data.ApiHelper
 import com.rootsrecipes.di.data.ApiHelperImpl
 import com.rootsrecipes.di.data.ApiServices
@@ -74,7 +73,6 @@ val appModule = module {
     single { ChatViewModel(get(),get(),get()) }
     single { MainViewModel(get()) }
     single { MessageViewModel() }
-    single { UserViewmodel(get()) }
     // Add a definition for ApiHelper
     single<ApiHelper> { get(named(BuildConfig.BASE_URL)) }
 
