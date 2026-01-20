@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clParentRecipeInformation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:context=".view.myRecipes.RecipeInformationFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/off_white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:id="@+id/ivRecipeImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_230sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/food_place_icon"
+                app:layout_collapseMode="parallax" />
+
+            <ImageView
+                android:id="@+id/ivRecipeImageEdit"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_minus40sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/edit_profile_icon"
+                android:visibility="gone"
+                app:layout_collapseMode="parallax" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:layout_margin="@dimen/_12sdp"
+                android:orientation="horizontal"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/ivSaveIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|top"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/saved_recipe_icon_inside"
+                    app:layout_collapseMode="parallax" />
+
+                <ImageView
+                    android:id="@+id/ivMoreIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/more_icon"
+                    app:tint="@color/white" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_margin="@dimen/_12sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/back_icon_2"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/fjalla_one"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp"
+                    tools:text="Recipe Title" />
+
+                <ImageView
+                    android:id="@+id/toolbarBackBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/back_icon_2"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/_12sdp">
+
+
+                    <ImageView
+                        android:id="@+id/toolbarSaveIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/saved_recipe_icon_inside"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/toolbarMoreIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/more_icon"
+                        android:visibility="gone"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRecipeInformation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvRecipeType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circular_border"
+                    android:backgroundTint="#E1E7FF"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="Private"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRecipeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/my_recipes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRecipeType" />
+
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    android:id="@+id/recipeRatingBar"
+                    style="@style/Widget.MaterialRatingBar.RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:isIndicator="true"
+                    android:progressTint="@color/green"
+                    android:rating="4.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRecipeName"
+                    app:mrb_fillBackgroundStars="true"
+                    app:mrb_progressBackgroundTint="@color/color_subtitle" />
+
+                <TextView
+                    android:id="@+id/totalRatingRecipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="(4.5)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintBottom_toBottomOf="@id/recipeRatingBar"
+                    app:layout_constraintStart_toEndOf="@id/recipeRatingBar"
+                    app:layout_constraintTop_toTopOf="@id/recipeRatingBar" />
+
+                <HorizontalScrollView
+                    android:id="@+id/llCuisineAndCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recipeRatingBar">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvRecipeTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:background="@drawable/btn_corner"
+                            android:backgroundTint="@color/category_color"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_9ssp"
+                            app:drawableStartCompat="@drawable/clock"
+                            app:fontFamily="@font/work_sans" />
+
+                        <TextView
+                            android:id="@+id/tvCategoryType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:background="@drawable/btn_corner"
+                            android:backgroundTint="@color/category_color"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_9ssp"
+                            app:drawableStartCompat="@drawable/category_icon"
+                            app:fontFamily="@font/work_sans" />
+
+                        <TextView
+                            android:id="@+id/tvCuisineType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:background="@drawable/btn_corner"
+                            android:backgroundTint="@color/category_color"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_9ssp"
+                            app:drawableStartCompat="@drawable/cuisine_icon"
+                            app:fontFamily="@font/work_sans" />
+
+                        <TextView
+                            android:id="@+id/tvSubCategoryType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:background="@drawable/btn_corner"
+                            android:backgroundTint="@color/category_color"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_9ssp"
+                            android:visibility="gone"
+                            app:drawableStartCompat="@drawable/cuisine_icon"
+                            app:fontFamily="@font/work_sans" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!-- User Details -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clUserInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llCuisineAndCategory">
+
+                    <View
+                        android:id="@+id/dividerViewTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_line"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:src="@drawable/profile_icon"
+                        app:layout_constraintBottom_toTopOf="@id/dividerViewBottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dividerViewTop" />
+
+                    <TextView
+                        android:id="@+id/tvFullName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Robert Fox"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/work_sans"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivProfile"
+                        app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="DenaJoe"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/_9ssp"
+                        app:fontFamily="@font/work_sans"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivProfile"
+                        app:layout_constraintTop_toBottomOf="@id/tvFullName" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFollowBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/corner_cl"
+                        android:backgroundTint="@color/category_color"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/follow"
+                        android:textColor="@color/green"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/followLoader"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:indeterminateTint="@color/light_green"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvFollowBtn"
+                        app:layout_constraintEnd_toEndOf="@id/tvFollowBtn"
+                        app:layout_constraintStart_toStartOf="@id/tvFollowBtn"
+                        app:layout_constraintTop_toTopOf="@id/tvFollowBtn" />
+
+                    <View
+                        android:id="@+id/dividerViewBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_line"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvRecipeDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/all_recipes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clUserInfo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/ingredients"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRecipeDescription" />
+
+                <TextView
+                    android:id="@+id/tvServingsCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:includeFontPadding="false"
+                    android:text="2 - 3 servings"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/user_green"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvIngredients"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvServingsCount" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/steps"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvIngredients" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSteps" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="Notes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvSteps" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNotesValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:includeFontPadding="false"
+                    android:text="Notes value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNotes" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSuggestion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="Suggestion"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNotesValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSuggestionValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:includeFontPadding="false"
+                    android:text="Suggestion value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSuggestion" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/dividerViewSteps"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"
+                app:layout_constraintTop_toBottomOf="@id/clRecipeInformation" />
+
+            <LinearLayout
+                android:id="@+id/llButtonCreateRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerViewSteps">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEditRecipes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/btn_corner_2"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/edit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/btn_corner"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clComments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerViewSteps">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvComments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/comment"
+                    android:drawableEnd="@drawable/next"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:gravity="center|left"
+                    android:includeFontPadding="false"
+                    android:text="Comments"
+                    android:textColor="@color/light_green"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/itemCommentLayout"
+                    layout="@layout/item_comment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvComments" />
+
+                <TextView
+                    android:id="@+id/tvShowMoreComments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/screen_padding"
+                    android:text="@string/show_more_comments"
+                    android:textColor="@color/light_green"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/work_sans"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/itemCommentLayout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPublish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/btn_corner"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/publish"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvShowMoreComments" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/clComments">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLeaveRating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/leave_your_ratings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontFamily="@font/fjalla_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clRateRecipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/circular_border"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLeaveRating">
+
+                    <TextView
+                        android:id="@+id/tvRateRecipe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rate_recipe"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontFamily="@font/work_sans"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/leaveRatingBar"
+                        style="@style/Widget.MaterialRatingBar.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:progressTint="@color/green"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvRateRecipe"
+                        app:mrb_fillBackgroundStars="true"
+                        app:mrb_progressBackgroundTint="@color/color_subtitle" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnProceed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="@drawable/btn_corner"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/submit"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/leaveRatingBar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

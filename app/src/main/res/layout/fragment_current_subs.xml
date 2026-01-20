@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".view.setting.CurrentSubsFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:foreground="@drawable/gradient_top"
+        android:scaleType="fitXY"
+        android:src="@drawable/food_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSubsTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/screen_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBackBtnCurrentSubs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:padding="@dimen/_6sdp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscription"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/work_sans"
+            android:textSize="@dimen/dimen_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBackBtnCurrentSubs"
+            app:layout_constraintBottom_toBottomOf="@id/ivBackBtnCurrentSubs"/>
+
+
+        <TextView
+            android:id="@+id/tvCurrentPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/screen_padding"
+            android:fontFamily="@font/fjalla_one"
+            android:text="Your Current Plan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBackBtnCurrentSubs" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCurrentPlan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/screen_padding"
+            android:background="@drawable/stroke_white"
+            android:backgroundTint="@color/light_green"
+            android:padding="@dimen/screen_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentPlan">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans"
+                android:text="Free Plan"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPlanCharges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans"
+                android:text="$0.00/month"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/stroke_white"
+            android:padding="@dimen/screen_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clCurrentPlan">
+
+            <TextView
+                android:id="@+id/tvAddRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/work_sans"
+                android:text="Add 5 recipes month"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/tick_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvViewRecipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_padding"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/work_sans"
+                android:text="View 50 recipes a month"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/tick_icon"
+                app:layout_constraintTop_toBottomOf="@id/tvAddRecipe" />
+
+            <TextView
+                android:id="@+id/tvNoAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_padding"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/work_sans"
+                android:text="@string/no_ads"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/tick_icon"
+                app:layout_constraintTop_toBottomOf="@id/tvViewRecipes" />
+
+            <TextView
+                android:id="@+id/tvChatWithOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_padding"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/work_sans"
+                android:text="@string/chat_with_other"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_16sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/tick_icon"
+                app:layout_constraintTop_toBottomOf="@id/tvNoAd" />
+
+            <TextView
+                android:id="@+id/tvFindAndChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_padding"
+                android:fontFamily="@font/work_sans"
+                android:text="Find and chat with people anywhere in the world."
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvChatWithOther" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvIncludeWith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/screen_padding"
+            android:background="@drawable/circular_border"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="@string/include_with_free_plan"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clCurrentPlan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnSubsManagePlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_padding"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/white"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvManagePlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/work_sans"
+            android:text="Manage Plan"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_16sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#2C4B22</color>
+    <color name="default_line_color">#CCCCCC</color>
+    <color name="hint_gray">#bcbcbc</color>
+    <color name="gray_text">#B6B6B6</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="view_color">#C4C4C4</color>
+    <color name="delete_red">#FB4A49</color>
+    <color name="color_subtitle">#70000000</color>
+    <color name="category_color">#E3E3E3</color>
+    <color name="cream_color">#FAFFDE</color>
+
+    <color name="off_white">#F3F3F3</color>
+    <color name="time_gray">#9F9F9F</color>
+    <color name="text_gray">#7E7E7E</color>
+    <color name="divider_line">#E5E5E5</color>
+    <color name="et_bg">#F3F6F6</color>
+    <color name="blue">#255BFF</color>
+    <color name="private_blue">#E1E7FF</color>
+    <color name="gray_notification">#E6E6E6</color>
+    <color name="select_person_bg">#F7F7FA</color>
+    <color name="yellow">#FFC023</color>
+    <color name="light_green">#5C6B28</color>
+
+    <color name="public_bg_color">#FAFFDE</color>
+    <color name="private_bg_color">#E1E7FF</color>
+    <color name="dd_gray">#767676</color>
+</resources>

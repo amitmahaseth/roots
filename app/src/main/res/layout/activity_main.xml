@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parentLayout"
+    android:background="?android:attr/colorBackground"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        android:background="?android:attr/colorBackground"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+      />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_shape"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="10dp"
+        android:outlineProvider="paddedBounds"
+        android:padding="7dp"
+        app:elevation="20dp"
+        android:visibility="gone"
+        app:itemBackground="@drawable/top_corner_shape"
+        app:itemIconTint="@color/active_tab_color"
+        app:itemTextAppearanceActive="@style/BottomNavigationView"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:itemTextColor="@color/active_tab_color"
+        app:labelVisibilityMode="labeled"
+        app:itemRippleColor="#0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Theme.Bottom.Navigation"
+        app:menu="@menu/nav_menu" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fab_add"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:src="@drawable/add_discover"
+            android:layout_gravity="center"/>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

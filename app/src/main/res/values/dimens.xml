@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_25dp">@dimen/_20sdp</dimen>
+    <dimen name="dimen_40dp">@dimen/_40sdp</dimen>
+    <dimen name="dimen_20dp">@dimen/_16sdp</dimen>
+    <dimen name="dimen_16dp">@dimen/_12sdp</dimen>
+    <dimen name="dimen_14dp">@dimen/_11sdp</dimen>
+    <dimen name="dimen_12dp">@dimen/_9sdp</dimen>
+    <dimen name="dimen_10dp">@dimen/_8sdp</dimen>
+
+    <dimen name="dimen_25sp">@dimen/_20ssp</dimen>
+    <dimen name="dimen_20sp">@dimen/_16ssp</dimen>
+    <dimen name="dimen_16sp">@dimen/_12ssp</dimen>
+    <dimen name="dimen_14sp">@dimen/_11ssp</dimen>
+    <dimen name="dimen_12sp">@dimen/_9ssp</dimen>
+    <dimen name="dimen_10sp">@dimen/_8ssp</dimen>
+
+    <dimen name="screen_padding">@dimen/_12sdp</dimen>
+
+</resources>

@@ -1,0 +1,188 @@
+<com.rootsrecipes.utils.NonScrollingBackgroundLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chat_bg"
+    tools:context=".view.messages.ChatFragment">
+
+
+
+    <!-- Fixed Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chatHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Header content unchanged -->
+        <ImageView
+            android:id="@+id/chatBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivChatProfile"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_6sdp"
+            android:src="@drawable/profile_icon"
+            app:layout_constraintBottom_toBottomOf="@id/chatBackBtn"
+            app:layout_constraintStart_toEndOf="@id/chatBackBtn"
+            app:layout_constraintTop_toTopOf="@id/chatBackBtn" />
+
+        <TextView
+            android:id="@+id/tvChatFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintStart_toEndOf="@id/ivChatProfile"
+            app:layout_constraintTop_toTopOf="@id/ivChatProfile" />
+
+        <TextView
+            android:id="@+id/tvActiveStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_10ssp"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintStart_toEndOf="@id/ivChatProfile"
+            app:layout_constraintTop_toBottomOf="@id/tvChatFullName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addChatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/chatAttachmentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/link_icon"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/llEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/llEditText">
+
+            <ImageView
+                android:id="@+id/chatCameraBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/camera_icon"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/chatMicBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/mic_black"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/ibSendMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/send" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llEditText"
+            android:layout_width="0dp"
+            android:padding="@dimen/_6sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_corner"
+            android:backgroundTint="@color/et_bg"
+            app:layout_constraintEnd_toStartOf="@id/llButtons"
+            app:layout_constraintStart_toEndOf="@id/chatAttachmentBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCopy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/attachment"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/etMessageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/blank_bg"
+                android:hint="@string/hint_message"
+                android:textColor="@color/black"
+                android:textColorHint="@color/text_gray"
+                android:textSize="@dimen/_12ssp"
+                android:maxHeight="@dimen/_70sdp"
+                app:fontFamily="@font/work_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivCopy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/addChatLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatHeaderLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+</com.rootsrecipes.utils.NonScrollingBackgroundLayout>

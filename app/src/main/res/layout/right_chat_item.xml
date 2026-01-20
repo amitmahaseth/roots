@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_8sdp"
+    >
+
+    <TextView
+        android:id="@+id/chatDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="Today"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_12ssp"
+        app:fontFamily="@font/work_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/right_message_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatDateTextView">
+
+        <TextView
+            android:id="@+id/textMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:maxWidth="@dimen/_170sdp"
+            android:minWidth="@dimen/_65sdp"
+            android:padding="@dimen/_6sdp"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:text="message"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="visible"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvChatTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:text="22:03"
+        app:fontFamily="@font/work_sans"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/text_gray"
+        app:layout_constraintEnd_toStartOf="@+id/checkReadBtn"
+        app:layout_constraintTop_toBottomOf="@id/chatLayout" />
+    <ImageView
+        android:id="@+id/checkReadBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check_read"
+        android:layout_marginEnd="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tvChatTime"
+        app:layout_constraintTop_toBottomOf="@id/chatLayout"
+        app:layout_constraintEnd_toEndOf="@id/chatLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

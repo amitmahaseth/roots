@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+  <!--  <style name="Base.Theme.RootsRecipes" parent="Theme.Material3.DayNight.NoActionBar">
+        &lt;!&ndash; Customize your dark theme here. &ndash;&gt;
+        &lt;!&ndash; <item name="colorPrimary">@color/my_dark_primary</item> &ndash;&gt;
+    </style>-->
+    <style name="Theme.Bottom.Navigation" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+    <style name="checkBoxRoots" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">@color/white</item> <!-- for checked state -->
+    </style>
+    <style name="PopupMenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/corner_cl</item>
+    </style>
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextColor">@color/green</item>
+    </style>
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/color_subtitle</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

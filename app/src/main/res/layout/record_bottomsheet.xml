@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_circular_border"
+    android:padding="@dimen/screen_padding">
+
+    <TextView
+        android:id="@+id/tvHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/listening_try_saying"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:fontFamily="@font/work_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTextRecorded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        app:fontFamily="@font/work_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderText" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ivBackgroundRecordingIcon"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/screen_padding"
+        app:lottie_rawRes="@raw/circle_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTextRecorded" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ivRecordingIcon"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:lottie_rawRes="@raw/record_wave"
+        android:background="@drawable/filled_circle"
+        app:layout_constraintBottom_toBottomOf="@id/ivBackgroundRecordingIcon"
+        app:layout_constraintEnd_toEndOf="@id/ivBackgroundRecordingIcon"
+        app:layout_constraintStart_toStartOf="@id/ivBackgroundRecordingIcon"
+        app:layout_constraintTop_toTopOf="@id/ivBackgroundRecordingIcon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

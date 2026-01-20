@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navDiscover"
+        android:icon="@drawable/discover_icon"
+        android:menuCategory="secondary"
+        android:title="@string/discover" />
+    <item
+        android:id="@+id/navRecipes"
+        android:icon="@drawable/recipes_icon"
+        android:menuCategory="secondary"
+        android:title="@string/recipes" />
+
+    <item
+        android:id="@+id/navAddDiscover"
+        android:menuCategory="secondary"
+        android:title="" />
+
+    <item
+        android:id="@+id/navChat"
+        android:icon="@drawable/message_icon"
+        android:menuCategory="secondary"
+        android:title="@string/chat" />
+
+    <item
+        android:id="@+id/navSettings"
+        android:icon="@drawable/setting_icon"
+        android:menuCategory="secondary"
+        android:title="@string/settings" />
+
+</menu>

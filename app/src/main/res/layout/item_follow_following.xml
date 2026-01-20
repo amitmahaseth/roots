@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivFollowUser"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFollowUser"
+        app:layout_constraintStart_toEndOf="@+id/ivFollowUser"
+        app:layout_constraintTop_toTopOf="@+id/ivFollowUser">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserNameFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserIdFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFollowMessage"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/follow_btn_corner"
+        android:backgroundTint="@color/green"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text=""
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFollowUser"
+        app:layout_constraintEnd_toStartOf="@+id/ivDeleteFollower"
+        app:layout_constraintTop_toTopOf="@+id/ivFollowUser" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDeleteFollower"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/close_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFollowUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivFollowUser" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

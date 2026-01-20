@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.rootsrecipes.view.onBoarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.rootsrecipes.view.createAccount.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:popUpTo="@id/signupFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.rootsrecipes.view.createAccount.OtpFragment"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp">
+        <action
+            android:id="@+id/action_otpFragment_to_walkThroughFragment"
+            app:destination="@id/walkThroughFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_createNewPassFragment"
+            app:destination="@id/createNewPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/walkThroughFragment"
+        android:name="com.rootsrecipes.view.createAccount.WalkThroughFragment"
+        android:label="fragment_walk_through"
+        tools:layout="@layout/fragment_walk_through">
+        <action
+            android:id="@+id/action_walkThroughFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.rootsrecipes.view.discover.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover">
+        <action
+            android:id="@+id/action_discoverFragment_to_saveRecipesFragment"
+            app:destination="@id/saveRecipesFragment" />
+        <action
+            android:id="@+id/action_discoverFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+        <action
+            android:id="@+id/action_discoverFragment_to_recipesListFragment"
+            app:destination="@id/recipesListFragment" />
+        <action
+            android:id="@+id/action_discoverFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:popUpTo="@id/discoverFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_discoverFragment_to_myRecipesFragment"
+            app:destination="@id/myRecipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.rootsrecipes.view.loginAccount.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signupFragment"
+            app:destination="@id/signupFragment"
+            app:popUpTo="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotFragment"
+            app:destination="@id/forgotFragment"
+            app:popUpTo="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment"
+            app:popUpTo="@id/home_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signInFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:popUpTo="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotFragment"
+        android:name="com.rootsrecipes.view.forgot.ForgotFragment"
+        android:label="fragment_forgot"
+        tools:layout="@layout/fragment_forgot">
+        <action
+            android:id="@+id/action_forgotFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewPassFragment"
+        android:name="com.rootsrecipes.view.forgot.CreateNewPassFragment"
+        android:label="fragment_create_new_pass"
+        tools:layout="@layout/fragment_create_new_pass">
+        <action
+            android:id="@+id/action_createNewPassFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.rootsrecipes.view.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_settingFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_saveRecipesFragment"
+            app:destination="@id/saveRecipesFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_socialMediaFragment"
+            app:destination="@id/socialMediaFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_aboutRootsFragment"
+            app:destination="@id/aboutRootsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_shareAppFragment"
+            app:destination="@id/shareAppFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_currentSubsFragment"
+            app:destination="@id/currentSubsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileInfoFragment"
+        android:name="com.rootsrecipes.view.setting.ProfileInfoFragment"
+        android:label="fragment_profile_info"
+        tools:layout="@layout/fragment_profile_info">
+        <action
+            android:id="@+id/action_profileInfoFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveRecipesFragment"
+        android:name="com.rootsrecipes.view.setting.SaveRecipesFragment"
+        android:label="fragment_save_recipes"
+        tools:layout="@layout/fragment_save_recipes">
+        <action
+            android:id="@+id/action_saveRecipesFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_saveRecipesFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.rootsrecipes.view.setting.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.rootsrecipes.view.setting.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/socialMediaFragment"
+        android:name="com.rootsrecipes.view.setting.SocialMediaFragment"
+        android:label="fragment_social_media"
+        tools:layout="@layout/fragment_social_media" />
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.rootsrecipes.view.discover.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/myRecipesFragment"
+        android:name="com.rootsrecipes.view.myRecipes.MyRecipesFragment"
+        android:label="fragment_my_recipes"
+        tools:layout="@layout/fragment_my_recipes">
+        <action
+            android:id="@+id/action_myRecipesFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_followersFragment"
+            app:destination="@id/followersFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
+
+        <action
+            android:id="@+id/action_myRecipesFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_saveRecipesFragment"
+            app:destination="@id/saveRecipesFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_recordRecipeFragment"
+            app:destination="@id/recordRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.rootsrecipes.view.messages.MessagesFragment"
+        android:label="fragment_messages"
+        tools:layout="@layout/fragment_messages">
+        <action
+            android:id="@+id/action_messagesFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.rootsrecipes.view.messages.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="com.rootsrecipes.view.recipeRecording.RecipeDetailsFragment"
+        android:label="fragment_recipe_details"
+        tools:layout="@layout/fragment_recipe_details">
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_recipeInformationFragment_edit"
+            app:destination="@id/recipeInformationFragment"
+            app:popUpTo="@id/myRecipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordRecipeFragment"
+        android:name="com.rootsrecipes.view.recipeRecording.RecordRecipeFragment"
+        android:label="fragment_record_recipe"
+        tools:layout="@layout/fragment_record_recipe">
+        <action
+            android:id="@+id/action_recordRecipeFragment_to_reviewRecordingFragment"
+            app:destination="@id/reviewRecordingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewRecordingFragment"
+        android:name="com.rootsrecipes.view.recipeRecording.ReviewRecordingFragment"
+        android:label="fragment_review_recording"
+        tools:layout="@layout/fragment_review_recording">
+        <action
+            android:id="@+id/action_reviewRecordingFragment_to_recipeDetailsFragment"
+            app:destination="@id/recipeDetailsFragment" />
+        <action
+            android:id="@+id/action_reviewRecordingFragment_to_recordRecipeFragment"
+            app:destination="@id/recordRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeInformationFragment"
+        android:name="com.rootsrecipes.view.myRecipes.RecipeInformationFragment"
+        android:label="fragment_recipe_information"
+        tools:layout="@layout/fragment_recipe_information">
+
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_shareRecipeFragment"
+            app:destination="@id/shareRecipeFragment" />
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_reviewRecordingFragment"
+            app:destination="@id/reviewRecordingFragment" />
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_recipeInformationFragment_to_editRecipesFragment"
+            app:destination="@id/editRecipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsListFragment"
+        android:name="com.rootsrecipes.view.notification.NotificationsListFragment"
+        android:label="fragment_notifications_list"
+        tools:layout="@layout/fragment_notifications_list" >
+        <action
+            android:id="@+id/action_notificationsListFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_notificationsListFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/followersFragment"
+        android:name="com.rootsrecipes.view.setting.FollowersFragment"
+        android:label="fragment_followers"
+        tools:layout="@layout/fragment_followers">
+        <action
+            android:id="@+id/action_followersFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectPersonFragment"
+        android:name="com.rootsrecipes.view.messages.SelectPersonFragment"
+        android:label="fragment_select_person"
+        tools:layout="@layout/fragment_select_person" />
+    <fragment
+        android:id="@+id/aboutRootsFragment"
+        android:name="com.rootsrecipes.view.setting.AboutRootsFragment"
+        android:label="fragment_about_roots"
+        tools:layout="@layout/fragment_about_roots" />
+    <fragment
+        android:id="@+id/shareAppFragment"
+        android:name="com.rootsrecipes.view.setting.ShareAppFragment"
+        android:label="fragment_share_app"
+        tools:layout="@layout/fragment_share_app" />
+    <fragment
+        android:id="@+id/recipesListFragment"
+        android:name="com.rootsrecipes.view.discover.RecipesListFragment"
+        android:label="fragment_recipes_list"
+        tools:layout="@layout/fragment_recipes_list">
+        <action
+            android:id="@+id/action_recipesListFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_recipesListFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.rootsrecipes.view.myRecipes.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_recipeInformationFragment"
+            app:destination="@id/recipeInformationFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_recipesListFragment"
+            app:destination="@id/recipesListFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_followersFragment"
+            app:destination="@id/followersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="com.rootsrecipes.view.setting.SubscriptionFragment"
+        android:label="fragment_subscription"
+        tools:layout="@layout/fragment_subscription" />
+    <fragment
+        android:id="@+id/currentSubsFragment"
+        android:name="com.rootsrecipes.view.setting.CurrentSubsFragment"
+        android:label="fragment_current_subs"
+        tools:layout="@layout/fragment_current_subs">
+        <action
+            android:id="@+id/action_currentSubsFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRecipesFragment"
+        android:name="com.rootsrecipes.view.myRecipes.EditRecipesFragment"
+        android:label="fragment_edit_recipes"
+        tools:layout="@layout/fragment_edit_recipes" />
+    <fragment
+        android:id="@+id/shareRecipeFragment"
+        android:name="com.rootsrecipes.view.myRecipes.ShareRecipeFragment"
+        android:label="fragment_share_recipe"
+        tools:layout="@layout/fragment_share_recipe" />
+</navigation>

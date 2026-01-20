@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/confirmRecordingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/white"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/ivMic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mic_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:text="@string/confirm_recipe_recording"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMic" />
+
+        <TextView
+            android:id="@+id/tvConfirmQuestionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:text="@string/confirm_recording_question"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:gravity="center"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeaderText" />
+
+        <CheckBox
+            android:id="@+id/cbConfirmRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvConfirmQuestionText" />
+
+        <TextView
+            android:id="@+id/cbText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_confirm_recording"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintBottom_toBottomOf="@id/cbConfirmRecipe"
+            app:layout_constraintStart_toEndOf="@id/cbConfirmRecipe"
+            app:layout_constraintTop_toTopOf="@id/cbConfirmRecipe" />
+
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@color/divider_line"
+            app:layout_constraintTop_toBottomOf="@id/cbConfirmRecipe" />
+
+        <TextView
+            android:id="@+id/btnYes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/yes"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_12ssp"
+            app:fontFamily="@font/work_sans"
+            app:layout_constraintTop_toBottomOf="@id/dividerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/btnNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/no"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmRecordingLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

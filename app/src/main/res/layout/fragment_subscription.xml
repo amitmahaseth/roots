@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".view.setting.SubscriptionFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:foreground="@drawable/gradient_top"
+                android:scaleType="fitXY"
+                android:src="@drawable/food_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSubsTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/screen_padding"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivCloseSubscription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_6sdp"
+                        android:src="@drawable/cross_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLogo"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_120sdp"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:src="@drawable/splash_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSelectAPlan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/screen_padding"
+                        android:fontFamily="@font/work_sans"
+                        android:text="@string/select_a_plan"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/svPlanScroll"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSelectAPlan">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clFreePlan"
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:background="@drawable/stroke_white"
+                                android:backgroundTint="@color/light_green"
+                                android:padding="@dimen/screen_padding"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/work_sans"
+                                    android:text="Free Plan"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvPlanCharges"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/work_sans"
+                                    android:text="$0.00/month"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dimen_16sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clPaidPlan"
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_12sdp"
+                                android:background="@drawable/stroke_white"
+                                android:padding="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/clFreePlan"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/work_sans"
+                                    android:text="Premium Plan"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/work_sans"
+                                    android:text="$0.00/month"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dimen_16sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </HorizontalScrollView>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/stroke_white"
+                        android:padding="@dimen/screen_padding"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/svPlanScroll">
+
+                        <TextView
+                            android:id="@+id/tvAddRecipe"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:fontFamily="@font/work_sans"
+                            android:text="Add 5 recipes month"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_16sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/tick_icon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvViewRecipes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:fontFamily="@font/work_sans"
+                            android:text="View 50 recipes a month"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_16sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/tick_icon"
+                            app:layout_constraintTop_toBottomOf="@id/tvAddRecipe" />
+
+                        <TextView
+                            android:id="@+id/tvNoAd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:fontFamily="@font/work_sans"
+                            android:text="@string/no_ads"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_16sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/tick_icon"
+                            app:layout_constraintTop_toBottomOf="@id/tvViewRecipes" />
+
+                        <TextView
+                            android:id="@+id/tvChatWithOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:fontFamily="@font/work_sans"
+                            android:text="@string/chat_with_other"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_16sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/tick_icon"
+                            app:layout_constraintTop_toBottomOf="@id/tvNoAd" />
+
+                        <TextView
+                            android:id="@+id/tvFindAndChat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/work_sans"
+                            android:text="Find and chat with people anywhere in the world."
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_14sp"
+                            app:layout_constraintTop_toBottomOf="@id/tvChatWithOther" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvIncludeWith"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/screen_padding"
+                        android:background="@drawable/circular_border"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:text="@string/include_with_free_plan"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/svPlanScroll" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSubsBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clSubsTop">
+
+                    <View
+                        android:id="@+id/viewDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvAllowText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/screen_padding"
+                        android:layout_marginTop="@dimen/screen_padding"
+                        android:text="@string/subscription_text_terms"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewDivider" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnSubsContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_padding"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/white"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tvContinueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans"
+            android:text="Continue - $0.00"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/dimen_16sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
